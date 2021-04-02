@@ -16,6 +16,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        primaryStage.setTitle("Chess Game");
+        primaryStage.getIcons().add(new Image("https://img.icons8.com/dusk/452/chess.png"));
         GridPane root = new GridPane();
         final int size = 8 ;
         for (int row = 0; row < size; row++) {
