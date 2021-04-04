@@ -121,5 +121,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        // Evan's testing:
+        King testKing = new King(true, 105, 5, 1);
     }
 }
