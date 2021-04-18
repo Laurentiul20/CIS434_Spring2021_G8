@@ -8,45 +8,44 @@
 
 package application;
 
-public class Pieces {
+public abstract class Pieces {
+   
    
    boolean isAlive;
    boolean color;
-   // 0 for white, 1 for black
+   // False for white, true for black
    int ID;
   
    // ID is dependent on the initial position of the piece. 
-   // To ensure uniqueness, the following system is used:
+   // It uses the same 2x2 array system. For example, the first 
    
-   // Black row 2: 801, 802, 803, ... , 808
-   // Black row 1: 701, 702, 703, ... , 708
-   // Blank rows
-   // White row 1: 201, 202, 203, ... , 208 
-   // White row 1: 101, 102, 103, ... , 108 
-   
-   int posX; 
-   int posY;
+   int row; 
+   int col;
    // Current position (x,y). 
    
-   public Pieces(boolean color, int ID, int posX, int posY) {
+   public Pieces(boolean init_Color, int init_ID, int init_Row, int init_Col) {
       // Public constructor
       boolean isAlive = true;
       // All pieces are initially alive.
       // Rest are input parameters (may be able to compute initial pos. from ID instead?):
-      color = this.color;
-      ID = this.ID;
-      posX=this.posX;
-      posY=this.posY;
+      
+      // DEBUG COMMENTED OUT:
+      color = init_Color;
+      ID = init_ID;
+      row = init_Row;
+      col = init_Col; 
+
    }
    
-   // NOTE: The generic moveMethod may be unnecessary or even harmful. Consider removing.
-   
-   public boolean moveMethod(int dX, int dY) { 
+   abstract boolean moveMethod(int dX, int dY);
       // Input parameters: Change in x (dx) and change in y (dy)
       // Returns a boolean if the attempted dx,dy is acceptable based on the piece.
-      // By default:
-      return false;
-   }
+      // BY DEFAULT, return false.
+      
+   abstract int getID();
+      // Returns the ID of the piece.
+     
+  
    
 } // End of pieces.
 

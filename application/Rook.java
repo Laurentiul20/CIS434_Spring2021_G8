@@ -2,10 +2,10 @@ package application;
 
 public class Rook extends Pieces {
 
-   Rook(boolean color, int ID, int posX, int posY) {
+   Rook(boolean color, int ID, int row, int col) {
       
       // Call the super class constructor (Pieces) (done by default?)
-      super(color, ID, posX, posY);
+      super(color, ID, row, col);
       
    }
    
@@ -15,13 +15,21 @@ public class Rook extends Pieces {
       if (dy==0 || dx==0) {
          // Let the move occur:
          // NOTE: this. is necessary?
-         this.posY = this.posY + dy;
-         this.posX = this.posX + dx;
+         this.row = this.row + dy;
+         this.col = this.col + dx;
          return true;
       } else {
          return false;
       }
       
    } // End of moveMethod (Queen).
+   
+   // Get method for the ID (I think you need this?): 
+   public int getID() {
+   
+      return ID;
+   }
+   
+
                
 } // End of Queen class.
