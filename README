@@ -1,1 +1,9 @@
-NOTE: Classes in the main branch ought to work now!
+NOTE: Classes in the main branch ought to work now! Though the moveMethods are still untested. They can be modified if need be. 
+
+TODO:
+
+- Connect the visual chess board to the underlying object-oriented structure.
+- Create "chess engine" (rules, turn order, win condition, etc.)
+- Create a simple menu for the game.
+
+See the Gantt chart for more details.
