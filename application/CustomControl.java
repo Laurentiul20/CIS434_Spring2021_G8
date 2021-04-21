@@ -6,6 +6,8 @@ import javafx.scene.control.Control;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Skin;
+import javafx.scene.control.SkinBase;
 
 public class CustomControl extends Control {
 	private class CustomControlSkin extends SkinBase<CustomControl> implements Skin<CustomControl> {
