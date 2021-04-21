@@ -8,6 +8,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class CustomControl extends Control {
+	private class CustomControlSkin extends SkinBase<CustomControl> implements Skin<CustomControl> {
+	public CustomControlSkin(CustomControl control) {
+		super(control);
+	}
+}
 	private ChessBoard chessBoard;
 	private StatusBar statusBar; 
 	private int statusBarSize = 100;	
