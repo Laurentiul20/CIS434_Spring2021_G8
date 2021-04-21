@@ -13,7 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class ChessBoard extends Pane {
-
+	// create the board including layout, structure and background
 	public ChessBoard(StatusBar newStatusBar) {
 		statusBar = newStatusBar;
 		statusBar.whitePlayerAlert.setText("Turn: White Player");
@@ -152,7 +152,8 @@ public class ChessBoard extends Pane {
 			getChildren().addAll(pieces[i][0].getImage(), pieces[i][1].getImage(), pieces[i][6].getImage(), pieces[i][7].getImage());
 		}
 	}
-
+	
+	// Implement resize method to make window bigger or smaller
 	@Override
 	public void resize(double width, double height) {
 		super.resize(width, height);
@@ -175,7 +176,7 @@ public class ChessBoard extends Pane {
 			}
 		}
 	}
-   
+   	// implementation when user clicks on reset button, everything goes back to ititial place
 	public void restartGame() {
    	playerOneRook = 2;
 		playerOneBishopLightSquare = 1;
@@ -219,7 +220,7 @@ public class ChessBoard extends Pane {
 		}
 
 	}
-	
+	// implementation when user clicks on a piece
 	public void selectPiece(final double x, final double y){
 		int indexX = (int) (x/ cell_width);
 		int indexY = (int) (y/ cell_height);
@@ -243,7 +244,7 @@ public class ChessBoard extends Pane {
 			}
 		}
 	}
-	
+	// implementation when user wants to make a move to another place
 	public void movePiece(final double x, final double y){
 		int indexX = (int) (x/ cell_width);
 		int indexY = (int) (y/ cell_height);
@@ -311,7 +312,7 @@ public class ChessBoard extends Pane {
 				statusBar.whitePlayerAlert.setText("Turn: White Player");
 		}
 	}
-	
+	// implementation of promotion when a pawn reaches the other end of enemy board
 	public void createPromotePiece(Piece piece)
 	{
 		Piece promotedPiece;
@@ -380,14 +381,14 @@ public class ChessBoard extends Pane {
 				playerTwoQueen++;
 		}
 	}
-	
+	// what colors will a piece selected will have and what collors the possible movement will have
 	public void colorSquare(int x, int y, boolean selectedPiece) {
 		if (selectedPiece)
 			windows[x][y].highlightWindow(Color.RED);
 		else
 			windows[x][y].highlightWindow(Color.ORANGE);			
 	}
-	
+	// method to remove highlight of the pieces
 	public void unhighlightWindow()
 	{
 		for (int y = 0; y < boardHeight; y++)
@@ -400,7 +401,7 @@ public class ChessBoard extends Pane {
 		}
 	}
 	
-	
+	// basic set and get methods
 	public Piece getKing(int type)
 	{
 		if (type == 1)
@@ -486,7 +487,6 @@ public class ChessBoard extends Pane {
 	private Pawn pawn18;
 		
 	private Piece selectedPiece = null;
-
 	private StatusBar statusBar = null;
 	
 	// GameLogic variables
