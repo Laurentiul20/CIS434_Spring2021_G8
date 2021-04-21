@@ -7,11 +7,11 @@ import javafx.scene.shape.StrokeType;
 import javafx.scene.transform.Translate;
 
 public class Window extends Group{
-
+		//constructor
 		public Window(int i) {
-			pos = new Translate();
+			position = new Translate();
 			rectangle = new Rectangle();
-			rectangle.getTransforms().add(pos);
+			rectangle.getTransforms().add(position);
 			if(i==0)
 			rectangle.setFill(Color.SADDLEBROWN);
 			else
@@ -29,8 +29,8 @@ public class Window extends Group{
 		@Override
 		public void relocate(double x, double y) {
 			super.relocate(x, y);
-			pos.setX(x);
-			pos.setY(y);
+			position.setX(x);
+			position.setY(y);
 		}
 		
 		public void highlightWindow(Color color) {
@@ -54,6 +54,6 @@ public class Window extends Group{
 			return (rectangle);
 		}
 		private Rectangle rectangle;
-		private Translate pos;
+		private Translate position;
 		private boolean isHighlighted = false;
 }
